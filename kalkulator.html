@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var calculate = document.getElementById("calculate")
+            calculate.onclick = function () {
+                var numberA = +document.getElementById("numberA").value
+                var numberB = +document.getElementById("numberB").value
+                var operation = document.getElementById("operation").value
+                var result = 0
+                switch (operation) {
+                    case "+":
+                        result = numberA + numberB;
+                        break;
+                    case "-":
+                        result = numberA - numberB;
+                        break;
+                    case "*":
+                        result = numberA * numberB;
+                        break;
+                    case "/":
+                        result = numberA / numberB;
+                        break;
+                }
+                document.getElementById("result").value = result
+            }
+        } 
+    </script>
+</head>
+
+<body>
+    <input id="numberA" type="number" placeholder="Enter number A" />
+    <select id="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input id="numberB" type="number" placeholder="Enter number B" />
+    <input id="result" type="number" />
+    <button id="calculate">calculate</button>
+
+</body>
+
+</html>

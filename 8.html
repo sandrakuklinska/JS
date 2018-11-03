@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+
+
+
+        /*window.onload = (){
+            var btnCheck = document.getElementById("btnCheck");
+            btnCheck.onclick = function () {
+                var Number1 = document.getElementById("nNumber").value
+                var Number2 = document.getElementById("nNumber2").value
+                var lowerNumber;
+                if (Number1 < Number2)
+                    lowerNumber = Number1
+                else
+                    lowerNumber = Number2
+
+                for (i = lowerNumber; i > 0; i--) {
+                    if (Number1 % && Number2 % i == 0) {
+                        document.getElementById("pResult").innerHTML = "NWD: " + i.tostring();
+                        break;
+                        //jeżeli chc*/
+
+
+        //wywołujemy gorny kod jako swoja funkcje
+        /* function NWD(Number1, Number2) {
+ 
+             var lowerNumber;
+             if (Number1 < Number2)
+                 lowerNumber = Number1
+             else
+                 lowerNumber = Number2
+ 
+             for (i = lowerNumber; i > 0; i--) {
+                 if (Number1 % && Number2 % i == 0) {
+                     return i; //koniec działąnia funkcji
+                     break;
+                 }
+             }
+ 
+         }*/
+
+       //NIE DZIAŁA????// function NWDEuklides(a, b) {
+        //var a = getValue("nNumber");
+          //  var b = getValue("nNumber2");
+            //var result = document.getElementById("pResult")
+           // while (a * b > 0) {
+             //   if (a > b) 
+                 //   a = a % b
+              //   else 
+                //    b = b % a
+                
+          //  }
+          //  return a + b;
+       // }
+
+
+
+
+        function getValue(emenentId) {
+            return +document.getElementById(emenentId).value
+        }
+
+        function foundNWDFor() {
+            var a = getValue("nNumber");
+            var b = getValue("nNumber2");
+            var result = document.getElementById("pResult")
+
+            for (let i = 0; a != b; i++) {
+                if (a > b) {
+                    a = a - b
+                } else {
+                    b = b - a
+                }
+            }
+
+            result.innerHTML = a
+            inviting(a)
+        }
+
+        function foundNWDWhile() {
+            var a = getValue("nNumber");
+            var b = getValue("nNumber2");
+            var result = document.getElementById("pResult")
+
+            while (a != b) {
+                if (a > b) {
+                    a = a - b
+                } else {
+                    b = b - a
+                }
+            }
+
+            /*można zrobić też z modulo
+            while (a != b){
+                if (a > b){
+                    a = a % b
+                } else{
+                    b = b % a
+                }
+            }*/
+
+            result.innerHTML = a
+            inviting(a)
+        }
+
+        function inviting(imie) {
+            alert("Hay guys " + imie)
+
+        }
+    </script>
+</head>
+
+<body>
+    <input id="nNumber" type="a" placeholder="Enter a" />
+    <input id="nNumber2" type="a" placeholder="Enter a" />
+    <input id="btnCheck" type="button" value="wspolny dzielnik FOR" onclick="foundNWDFor()" />
+    <input id="btnCheck" type="button" value="wspolny dzielnik WHILE" onclick="foundNWDWhile()" />
+    <input id="btnCheck" type="button" value="NWDEuklides" onclick="NWDEuklides()" />
+    <button onclick="inviting('Sandra')">inviting</button>
+    <p id="pResult"></p>
+</body>
+
+
+</html>

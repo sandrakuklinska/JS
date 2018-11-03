@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>czy pełnoletni</title>
+    <script>
+        window.onload = function () {
+            var actualDate = new Date(); //do pobrania daty
+            //alert(actualDate.toLocaleDateString("pl-PL"));
+            //alert(actualDate.getMonth())
+            //alert(actualDate.getDay())//miesiac od 0 a dzien od 1
+            var dBirthday = document.getElementById("dBirthday");
+            dBirthday.onchange = function () {
+                var dBirthday = document.getElementById("dBirthday");
+                var actualDate = new Date();
+                //(new Date(this.value).getFullYear()); //data na podstawie tekstu
+                if (actualDate.getFullYear() - dBirthday.getFullYear() >= 18) {
+                pResult.style.color = "green"
+                    pResult.innerHTML = "pełnoletni rocznikowo";}
+                    else {
+                     pResult.style.color = "red"
+                     pResult.innerHTML = "Niepełnoletni rocznikowo"}
+                   
+                   //else (actualDate <= dBirthday - 18)
+                        //alert("jest pełnoletnia")
+                    }
+                }
+            
+
+
+
+            //alert(document.getElementById("dBirthday").value);
+
+
+
+        
+    </script>
+</head>
+
+<body>
+    <input id="dBirthday" type="date" />
+    <p id="pResult"></p>
+</body>
+
+</html>

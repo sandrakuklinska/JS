@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload= function() {
+            var pProductDescription = document.getElementById("pProductDescription");
+            var pProductDescriptionOrginalText = document.getElementById("pProductDescription").innerHTML;
+            var tSearch = document.getElementById("tSearch");
+            
+
+
+            tSearch.onkeyup =function(){
+                var tSearch = this.value.
+
+                //pProductDescription.ind
+
+                pProductDescription.innerHTML = pProductDescriptionOrginalText.replace(
+                    new RegExp(tSearchText, 'ig'),
+                 '<span style="background-color: yellow">' + tSearchText + '</span>');
+            }
+            };
+
+
+
+
+            //alert(pProductDescription.length); //DLUGOSC TEKSTU   
+            //alert(pProductDescription.trim().toLocaleLowerCase().indexOf("Cel")); //POZYCJA TEKSTU W TEKSCIE
+            //alert(pProductDescription.replace("nauce programowania nowoczesnych","vfkagjbavkjXCBj")) //ZAMIANA TEKSTU
+            /*alert(pProductDescription.substr(
+                pProductDescription.indexOf("dla wszystkich osób, ") + "dla wszystkich osób, ".length,
+                pProductDescription.length -(pProductDescription.indexOf("dla wszystkich osób, ") + "dla wszystkich osób, ".length)
+            )
+        };*/
+        /*alert(pProductDescription.substring(
+                pProductDescription.indexOf("dla wszystkich osób, ") + "dla wszystkich osób, ".length;
+                pProductDescription.length 
+            )
+        };*/
+
+
+    </script>
+</head>
+
+<body>
+    <input id="tSearch" type="text" placeholder="Podaj tekst wyszukiwania" />
+    <p id="pProductDescription"></p>
+</body>
+
+</html>

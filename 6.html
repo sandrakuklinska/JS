@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>liczba pierwsza</title>
+    <script>
+        window.onload = function () {
+            var btnCheck = document.getElementById("btnCheck");
+            btnCheck.onclick = function () {
+                const number = document.getElementById("nNumber").value;
+                var pResult = document.getElementById("pResult");
+                pResult.innerHTML = number + "is prime number";
+                var start = new Date();
+
+                if (number == 0) {
+                    pResult.innerHTML = number + "ani taka ani taka"
+                } else if (number % 2 == 0 && number != 2) {
+                    pResult.innerHTML = number + "is not prime number";
+                } else {
+                    for (var i = 2; i <= Math.sqrt(number); i++) {
+                        if (number % i == 0) {
+                            pResult.innerHTML = number + "is not prime number";
+                            break;
+                        }
+                    }
+                }
+                
+                var end = new Date();
+                var timeSpan = end - start;
+                alert((timeSpan / 1000) + "sekund");
+                // alert(timeSpan);
+                console.log(timeSpan);
+
+            };
+        };
+    </script>
+
+</head>
+
+<body>
+    <input id="nNumber" type="number" placeholder="Enter number" value="6620830889" />
+    <input id="btnCheck" type="button" value="calculate factorial" />
+    <p id="pResult"></p>
+</body>
+
+</html>
