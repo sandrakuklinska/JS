@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dynamiczne listy</title>
+    <style>
+        .heightlight-green{
+        color: green;
+        font-weight: 900;
+    }
+    
+    </style>
+    <script>
+        window.onload = function () {
+            var tNewTodo = document.getElementById("tTodo");
+            var tSearchTodos = document.getElementById("tSearchTodos");
+            var olTodos = document.getElementById("olTodos");
+
+            tNewTodo.onkeyup = function (event) {
+                if (event.keyCode == 13)//kazdy klawisz na lawiaurze ma swoj kod
+                {
+                    //alert(tNewTodo.value);
+                    var NewTodo = tNewTodo.value;
+                    var liNewTodo = document.createElement("li");
+                    var textNodeTodo = document.createTextNode(NewTodo);
+                    liNewTodo.appendChild(textNodeTodo);
+
+                    var btnDelateTodo = document.createElement("button");
+                    var textNodeDelateTodo = document.createTextNode("X");
+                    btnDelateTodo.appendChild(textNodeDelateTodo);
+                    btnDelateTodo.setAttribute("onclick", "delateTodo('" + liNewTodo + "')");
+
+                    //btnDelateTodo.setAttribute("onclick", olTodos.removeChild(liNewTodo));
+                    // btnDelateTodo.setAttribute("onclick", "alert('" + NewTodo + "')");
+
+
+                    liNewTodo.appendChild(btnDelateTodo);
+
+
+                    olTodos.appendChild(liNewTodo);
+
+                    // PRZYKLAD DLA GORY
+                    // var para = document.createElement("p");
+                    // var node = document.createTextNode("This is a new.");
+                    // para.appendChild(node);
+                    // var child = document.getElementById("p1");
+                    // var element = document.getElementById("d1");
+                    // element.insertBefore(para,child)
+                };
+            }
+
+            //ZADANIE DOMOWE
+            // tNweTodo.onmouseover = function(event){ 
+            //     if(tNewTodo.value == ""){
+            //         tNewTodo.setAttribute.....
+            //         }
+            //         else{
+            //             tNewTodo.style.border = solid
+            //         }
+            //     }
+        };
+
+        // //alert(document.getElementsByTagName("p")[0].innerHTML); //wzielismy wszystkie paragrafy, wzielismy 1 i wyswietlilismy
+        // //
+        // var paragraphs = document.querySelectorAll("#dTodos p"); //beda na zielno tylko te pierwsze
+        // //var paragraphs = document.getElementsByTagName("p"); //pobieranie wszystkich paragrafow
+        // for(var i=0; i < paragraphs.length; i++){
+        //     if(paragraphs[i].innerHTML.includes("Mam pojecie")){
+        //         //paragraphs[i].style.color = "Green";
+        //        // paragraphs[i].setAttributes("style", "color: green; font-weight: bold");
+        //         //paragraphs[i].setAttribute("class", "heightlight-green");
+        //         paragraphs[i].classList.add("heightlight-green");
+        //     }
+        // }
+
+        // paragraphs.forEach(function(paragraph){
+        //     if(paragraph.innerHTML == "Mam pojecie"){
+        //         paragraph.style.color = "Green";
+        //     }
+        // });
+        function delateTodo(liTodo) {
+            document.getElementById("olTodos").removeChild(liTodo);
+        }
+
+    </script>
+</head>
+
+<body>
+    <div>Add new todo <input id="tTodo" type="text" /></div>
+    <div>Serch todo <input id="tSearchTodos" typr="text" /></div>
+    <ol id="olTodos">
+    </ol>
+</body>
+
+</html>

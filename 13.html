@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //     window.onresize = function () { //zmiana rozmiaru przegladarki
+        //         console.log(window.innerWidth);
+        //     }
+        //     window.open("http://wsb.pl", "_blank"); // nlank powoduje ze otworzy sie w nowym oknie
+
+        //    console.log(window.location.href) 
+        //    window.location.assign = ("http:/wp.pl") //pozwala na przeładowania na inna stronke
+        //    //window.navigator.geolocation //???uzywane np na lotniskach hmm
+
+        //    function.goBack(){
+        //        window.history.go(-2);} // po to aby na stronie mozna cofnac sie
+
+        //     consol.log(navigator.appVersion);
+        //     consol.log(navigator.userAgent);
+        //     consol.log(navigator.language);
+        //     consol.log(Mobi|Android/i.test(navigator.userAgent)); //sprawzamy czy user jest mobilny???
+
+        //     //TAMING EVENTS 
+
+        //     setInterval
+
+
+
+
+        window.onload = function () {
+            var interval = setInterval(function () {
+                document.getElementById("pTime").innerHTML = new Date().toLocaleString("pl-PL");
+
+            }, 1000);
+
+            var stop = document.getElementById('tTodo');
+
+            stop.onkeyup = function (event) {
+                if (event.keyCode == 13) {
+                    clearInterval(interval);
+                }
+                }
+            }
+
+            //CIASTECZKA -- nie bedzie dzialac bo nie mam tych zmiennych??
+            var cookieDate = new Date(); 
+            var a = cookieDate.setMonth(cookieDate.getMonth() +1);
+            document.cookie="serchTodos=" + tSerchTodos.value + ";expires=" + cookieDate.toUTCString();
+    </script>
+</head>
+
+<body>
+    <p id="pTime"></p>
+    <div>Add new todo <input id="tTodo" type="text" /></div>
+    <div>Serch todo <input id="tSearchTodos" typr="text" /></div>
+
+    <ol id="olTodos">
+
+    </ol>
+
+
+</body>
+
+</html>
